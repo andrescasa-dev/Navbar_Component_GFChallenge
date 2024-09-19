@@ -1,5 +1,11 @@
+import Button from "./components/Button";
+
 function App() {
-  return <div className="text-2xl text-red-400">Hello world</div>;
+  return (
+    <main className="flex justify-center items-center min-h-screen">
+      <Button variant="primary">Button</Button>
+    </main>
+  );
 }
 
 export default App;
