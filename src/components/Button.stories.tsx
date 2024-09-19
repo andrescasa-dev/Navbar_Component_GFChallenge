@@ -3,7 +3,7 @@ import Button from "./Button";
 import { RiMenuFill } from "@remixicon/react";
 
 const meta = {
-  title: "Example/Button",
+  title: "Button",
   component: Button,
   parameters: {
     layout: "centered",
@@ -54,6 +54,6 @@ export const Disabled: Story = {
   args: {
     disabled: true,
     variant: "secondary",
-    children: "Allow cookies"
-  }
+    children: "Allow cookies",
+  },
 };

@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 interface ButtonProps extends PropsWithChildren, ComponentProps<"button"> {
   variant?: "primary" | "secondary" | "icon" | "link";
+  className?: string;
 }
 
 const baseStyle =
@@ -17,9 +18,17 @@ const variants = {
   link: "px-0.5 py-0 min-w-0 text-neutral-600 hover:text-neutral-900 disabled:text-neutral-400",
 };
 
-function Button({ children, variant = "primary", ...delegate }: ButtonProps) {
+function Button({
+  children,
+  variant = "primary",
+  className,
+  ...delegate
+}: ButtonProps) {
   return (
-    <button {...delegate} className={twMerge(baseStyle, variants[variant])}>
+    <button
+      {...delegate}
+      className={twMerge(baseStyle, variants[variant], className)}
+    >
       {children}
     </button>
   );

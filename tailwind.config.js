@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
+import { keyframes } from 'storybook/internal/theming'
+import { transform } from 'typescript'
+
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default {
@@ -15,6 +18,28 @@ export default {
       fontFamily: {
         'sans': ['"Noto Sans"', ...defaultTheme.fontFamily.sans],
       },
+      animation: {
+        'enter': 'enter .6s ease-out forwards',
+        'appear': 'appear .2s ease-out forwards'
+      },
+      keyframes:{
+        enter: {
+          '0%': {
+            transform: 'translateX(0%)'
+          },
+          '100%': {
+            transform: 'translateX(100%)'
+          }
+        },
+        appear: {
+          '0%': {
+            opacity: '0'
+          },
+          '100%': {
+            opacity: '100'
+          }
+        }
+      }
   },
   plugins: [],
 }}
