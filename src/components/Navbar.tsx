@@ -5,13 +5,46 @@ import * as Dialog from "@radix-ui/react-dialog";
 
 function Navbar() {
   return (
-    <header className="flex justify-between w-screen items-center pt-9 px-4">
+    <header className="flex justify-between lg:justify-start w-screen items-center pt-9 px-4">
       <div className="flex">
         <Logo />
       </div>
+      <nav className="hidden lg:flex flex-grow lg:ml-24 justify-between ">
+        <ul className="flex gap-2 justify-start">
+          <li>
+            <Button variant="link" className="justify-start p-3">
+              Home
+            </Button>
+          </li>
+          <li>
+            <Button variant="link" className="justify-start p-3">
+              Features
+            </Button>
+          </li>
+          <li>
+            <Button variant="link" className="justify-start p-3">
+              Pricing
+            </Button>
+          </li>
+          <li>
+            <Button variant="link" className="justify-start p-3">
+              About
+            </Button>
+          </li>
+          <li>
+            <Button variant="link" className="justify-start p-3">
+              Contact
+            </Button>
+          </li>
+        </ul>
+        <div className="flex gap-4">
+          <Button variant="secondary">Learn More</Button>
+          <Button variant="primary">See pricing</Button>
+        </div>
+      </nav>
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <Button variant="icon">
+          <Button className="lg:hidden" variant="icon">
             <RiMenuFill className="size-5" />
           </Button>
         </Dialog.Trigger>
