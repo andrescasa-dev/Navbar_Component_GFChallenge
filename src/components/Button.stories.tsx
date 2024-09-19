@@ -49,3 +49,11 @@ export const Link: Story = {
     children: "features",
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    variant: "secondary",
+    children: "Allow cookies"
+  }
+};
