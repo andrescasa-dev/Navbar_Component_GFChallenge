@@ -13,7 +13,7 @@ const navItems = [
 
 function Navbar() {
   return (
-    <header className="flex justify-between lg:justify-start w-screen items-center pt-9 px-4">
+    <header className="flex bg-transparent justify-between lg:justify-start w-full items-center pt-6 px-4 h-fit">
       <div className="flex">
         <Logo />
       </div>
@@ -44,7 +44,7 @@ function Navbar() {
         </Dialog.Trigger>
         <Dialog.Portal>
           <Dialog.Overlay className="bg-neutral-950/50 fixed inset-0 opacity-0 animate-appear" />
-          <Dialog.Content className="bg-white p-4 pt-9 min-h-svh top-0 left-[-100%] animate-enter w-[100vw] fixed flex flex-col gap-6">
+          <Dialog.Content className="bg-white p-4 pt-6 min-h-svh top-0 left-[-100%] animate-enter w-[100vw] fixed flex flex-col gap-6">
             <div className="flex justify-between">
               <Dialog.Title>
                 <Logo />
