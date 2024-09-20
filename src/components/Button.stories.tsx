@@ -47,6 +47,7 @@ export const Link: Story = {
     disabled: false,
     variant: "link",
     children: "features",
+    href: "#",
   },
 };
 

@@ -12,34 +12,38 @@ function Navbar() {
       <nav className="hidden lg:flex flex-grow lg:ml-24 justify-between ">
         <ul className="flex gap-2 justify-start">
           <li>
-            <Button variant="link" className="justify-start p-3">
+            <Button href="#" variant="link" className="justify-start p-3">
               Home
             </Button>
           </li>
           <li>
-            <Button variant="link" className="justify-start p-3">
+            <Button href="#" variant="link" className="justify-start p-3">
               Features
             </Button>
           </li>
           <li>
-            <Button variant="link" className="justify-start p-3">
+            <Button href="#" variant="link" className="justify-start p-3">
               Pricing
             </Button>
           </li>
           <li>
-            <Button variant="link" className="justify-start p-3">
+            <Button href="#" variant="link" className="justify-start p-3">
               About
             </Button>
           </li>
           <li>
-            <Button variant="link" className="justify-start p-3">
+            <Button href="#" variant="link" className="justify-start p-3">
               Contact
             </Button>
           </li>
         </ul>
         <div className="flex gap-4">
-          <Button variant="secondary">Learn More</Button>
-          <Button variant="primary">See pricing</Button>
+          <Button variant="secondary" href="/learn-more">
+            Learn More
+          </Button>
+          <Button variant="primary" href="/pricing">
+            See pricing
+          </Button>
         </div>
       </nav>
       <Dialog.Root>
@@ -62,24 +66,26 @@ function Navbar() {
               </Dialog.Close>
             </div>
             <div className="flex flex-col gap-2 flex-grow justify-start">
-              <Button variant="link" className="justify-start p-3">
+              <Button href="#" variant="link" className="justify-start p-3">
                 Home
               </Button>
-              <Button variant="link" className="justify-start p-3">
+              <Button href="#" variant="link" className="justify-start p-3">
                 Features
               </Button>
-              <Button variant="link" className="justify-start p-3">
+              <Button href="#" variant="link" className="justify-start p-3">
                 Pricing
               </Button>
-              <Button variant="link" className="justify-start p-3">
+              <Button href="#" variant="link" className="justify-start p-3">
                 About
               </Button>
-              <Button variant="link" className="justify-start p-3">
+              <Button href="#" variant="link" className="justify-start p-3">
                 Contact
               </Button>
             </div>
             <div className="flex flex-col gap-4">
-              <Button variant="secondary">Learn More</Button>
+              <Button variant="secondary" href="/learn-more">
+                Learn More
+              </Button>
               <Button variant="primary">Try it out</Button>
             </div>
           </Dialog.Content>

@@ -19,7 +19,7 @@ export default {
         'sans': ['"Noto Sans"', ...defaultTheme.fontFamily.sans],
       },
       animation: {
-        'enter': 'enter .6s ease-out forwards',
+        'enter': 'enter .35s ease-out forwards',
         'appear': 'appear .2s ease-out forwards'
       },
       keyframes:{

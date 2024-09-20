@@ -1,11 +1,6 @@
 import { ComponentProps, PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 
-interface ButtonProps extends PropsWithChildren, ComponentProps<"button"> {
-  variant?: "primary" | "secondary" | "icon" | "link";
-  className?: string;
-}
-
 const baseStyle =
   "flex justify-center items-center  px-4 py-2.5 rounded font-medium text-base focus:outline-none focus:ring-4 focus:ring-indigo-100";
 
@@ -18,19 +13,30 @@ const variants = {
   link: "px-0.5 py-0 min-w-0 text-neutral-600 hover:text-neutral-900 disabled:text-neutral-400 md:text-base text-sm",
 };
 
+interface BaseProps extends PropsWithChildren {
+  variant?: "primary" | "secondary" | "icon" | "link";
+  className?: string;
+}
+
+type NativeButtonProps = BaseProps & ComponentProps<"button">;
+type AnchorProps = BaseProps & ComponentProps<"a">;
+type ButtonProps = NativeButtonProps & AnchorProps;
+
 function Button({
   children,
   variant = "primary",
   className,
   ...delegate
 }: ButtonProps) {
+  const Tag =
+    variant === "link" || delegate.href !== undefined ? "a" : "button";
   return (
-    <button
+    <Tag
       {...delegate}
       className={twMerge(baseStyle, variants[variant], className)}
     >
       {children}
-    </button>
+    </Tag>
   );
 }
 
