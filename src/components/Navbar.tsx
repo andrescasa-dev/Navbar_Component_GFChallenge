@@ -3,6 +3,14 @@ import Button from "./Button";
 import Logo from "./icons/logo";
 import * as Dialog from "@radix-ui/react-dialog";
 
+const navItems = [
+  { label: "Home", href: "#" },
+  { label: "Features", href: "#" },
+  { label: "Pricing", href: "#" },
+  { label: "About", href: "#" },
+  { label: "Contact", href: "#" },
+];
+
 function Navbar() {
   return (
     <header className="flex justify-between lg:justify-start w-screen items-center pt-9 px-4">
@@ -11,31 +19,13 @@ function Navbar() {
       </div>
       <nav className="hidden lg:flex flex-grow lg:ml-24 justify-between ">
         <ul className="flex gap-2 justify-start">
-          <li>
-            <Button href="#" variant="link" className="justify-start p-3">
-              Home
-            </Button>
-          </li>
-          <li>
-            <Button href="#" variant="link" className="justify-start p-3">
-              Features
-            </Button>
-          </li>
-          <li>
-            <Button href="#" variant="link" className="justify-start p-3">
-              Pricing
-            </Button>
-          </li>
-          <li>
-            <Button href="#" variant="link" className="justify-start p-3">
-              About
-            </Button>
-          </li>
-          <li>
-            <Button href="#" variant="link" className="justify-start p-3">
-              Contact
-            </Button>
-          </li>
+          {navItems.map(({ label, href }) => (
+            <li key={label}>
+              <Button href={href} variant="link" className="justify-start p-3">
+                {label}
+              </Button>
+            </li>
+          ))}
         </ul>
         <div className="flex gap-4">
           <Button variant="secondary" href="/learn-more">
@@ -49,7 +39,7 @@ function Navbar() {
       <Dialog.Root>
         <Dialog.Trigger asChild>
           <Button className="lg:hidden" variant="icon">
-            <RiMenuFill className="size-5" />
+            <RiMenuFill aria-label="Open Navigation" className="size-5" />
           </Button>
         </Dialog.Trigger>
         <Dialog.Portal>
@@ -61,7 +51,7 @@ function Navbar() {
               </Dialog.Title>
               <Dialog.Close>
                 <Button variant="icon">
-                  <RiCloseFill className="size-5" />
+                  <RiCloseFill aria-hidden={true} className="size-5" />
                 </Button>
               </Dialog.Close>
             </div>

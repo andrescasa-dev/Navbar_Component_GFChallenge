@@ -26,6 +26,15 @@ export const Primary: Story = {
   },
 };
 
+export const PrimaryLink: Story = {
+  args: {
+    href: "#",
+    disabled: false,
+    variant: "primary",
+    children: "Allow cookies",
+  },
+};
+
 export const Secondary: Story = {
   args: {
     disabled: false,
@@ -38,7 +47,7 @@ export const Icon: Story = {
   args: {
     disabled: false,
     variant: "icon",
-    children: <RiMenuFill />,
+    children: <RiMenuFill aria-label="Open Navigation" />,
   },
 };
 
